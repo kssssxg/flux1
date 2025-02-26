@@ -97,7 +97,7 @@ const GenerateImage: FC = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 px-4">
       <div className="relative bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg rounded-3xl shadow-2xl p-10 max-w-md w-full">
         <h1 className="text-4xl font-extrabold text-white mb-8 text-center drop-shadow-lg">
-          白嫖 CF 的 Flux 生成图片
+          生成图片
         </h1>
         <Form method="post" className="space-y-8" onSubmit={handleSubmit}>
           <div>
@@ -111,7 +111,7 @@ const GenerateImage: FC = () => {
               value={prompt}
               onChange={handlePromptChange}
               className="w-full px-5 py-3 rounded-xl border border-transparent focus:outline-none focus:ring-2 focus:ring-indigo-400 bg-white bg-opacity-20 text-white placeholder-white placeholder-opacity-70 transition duration-300 ease-in-out hover:bg-opacity-30"
-              placeholder="请输入您的提示词..."
+              placeholder="请输入您的提示词...生成需要一到二分钟"
               required
             />
           </div>
