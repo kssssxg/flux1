@@ -1,36 +1,37 @@
-#Worker名称，与CF中的工人名称必须一致
-姓名="通量1"
 
-#兼容性日期，确保使用最新的工人运行时功能
-兼容性_日期="2024-10-04"
+# Worker 名称,与CF中的Worker名称必须一致
+name = "free-flux"
+
+# 兼容性日期，确保使用最新的 Workers 运行时功能
+compatibility_date = "2024-10-04"
 
 # 主入口文件
-主要的="./build/worker/index.js"
+main = "./build/worker/index.js"
 
 # 静态资源目录
-资产={directory="./build/client"}
+assets = { directory = "./build/client" }
 
-#启用工人日志
-[可观察性]
-已启用=正确
+# 启用 Workers 日志
+[observability]
+enabled = true
 
 [vars]
-CF_ACCOUNT_LIST='''[{
-"account_id"："你的CloudFlare帐户ID"，
-"令牌"："有workers AI权限的API令牌"
+CF_ACCOUNT_LIST = '''[{
+    "account_id":"你的CloudFlare帐户ID",
+    "token":"有Workers AI权限的API令牌"
 }]'''
-API_KEY="您的api密钥在此"
-CF_TRANSLATE_MODEL="@cf/qwen/qwen1.5-14b-chat-awq"
-CF_IS_TRANSLATE="真"
-use_EXTERNAL_API="假"
-external_API=“”
-外部_模型=“”
-external_API_KEY=“”
-flux_NUM_STEPS="6"
-customer_MODEL_MAP='''{
-"FLUX.1-Schnell-CF"："@cf/黑森林实验室/flux.1-schnell"，
-"DS-8-CF"："@cf/lykon/dreamshaper-8-lcm"，
-"SD-XL-Bash-CF"："@cf/stabilityai/stable-diffusion-XL-base-1.0"，
-"SD-XL-闪电-CF"："@cf/字节跳动/稳定扩散-XL-闪电"
+API_KEY = "your_api_key_here"
+CF_TRANSLATE_MODEL = "@cf/qwen/qwen1.5-14b-chat-awq"
+CF_IS_TRANSLATE = "true"
+USE_EXTERNAL_API = "false"
+EXTERNAL_API = ""
+EXTERNAL_MODEL = ""
+EXTERNAL_API_KEY = ""
+FLUX_NUM_STEPS = "6"
+CUSTOMER_MODEL_MAP = '''{
+    "FLUX.1-Schnell-CF":"@cf/black-forest-labs/flux-1-schnell",
+    "DS-8-CF":"@cf/lykon/dreamshaper-8-lcm",
+    "SD-XL-Bash-CF":"@cf/stabilityai/stable-diffusion-xl-base-1.0",
+    "SD-XL-Lightning-CF":"@cf/bytedance/stable-diffusion-xl-lightning"
 }'''
-getme="测试专用"
+getme = "测试专用"
